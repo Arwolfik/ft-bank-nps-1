@@ -152,6 +152,15 @@
       }
     }
 
+    // необязательный свободный комментарий
+    const freeTextEl = document.getElementById("free-text");
+    const freeText = (freeTextEl?.value || "").trim();
+    if (freeText) {
+      // ключ "free" бэкенд запишет в колонку NPS1_FREE (см. конфиг)
+      answers.free = freeText;
+    }
+
+
     if (!ok) return;
 
     submitBtn.disabled = true;
